@@ -1,0 +1,5 @@
+# Gradle cache folder
+.gradle
+
+# Idea local configuration folder
+.idea
