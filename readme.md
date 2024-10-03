@@ -1,2 +1,2 @@
-### About library:
+## About library:
 Netware Client is a straightforward networking library to simplify networking in Kotlin and Java. This library is created to simplify the process of sending and receiving data between clients and servers. Please refer to the following documentation to learn how you can use this library in your project.
