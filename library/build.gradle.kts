@@ -1,9 +1,21 @@
 plugins {
-    alias(libs.plugins.kotlin)g
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.mavenPublish)
 }
+
+private val libraryArtifactId = "netwareclient"
+private val libraryReleaseVersion = "0.0.1-alpha"
+private val libraryGroup = "com.github.netwareclient"
+
+group = libraryGroup
+version = libraryReleaseVersion
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+
 }
 
 // Custom source code directory
@@ -13,6 +25,18 @@ sourceSets {
     }
 }
 
-dependencies {
+// Local publishing configuration
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["kotlin"])
+            groupId = libraryGroup
+            artifactId = libraryArtifactId
+            version = libraryReleaseVersion
+        }
 
+        repositories {
+            mavenLocal()
+        }
+    }
 }
