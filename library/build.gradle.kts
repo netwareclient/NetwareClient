@@ -6,7 +6,6 @@ repositories {
     mavenCentral()
 }
 
-
 // Custom source code directory
 sourceSets {
     main {
