@@ -48,7 +48,7 @@ class RequestClientTest {
 
         val requestClient = RequestClient(
             url = "http://127.0.0.1:8080/",
-            method = "POST"
+            method = "GET"
         )
 
         assertEquals(true, requestClient.isNetworkRequestMethodValid())

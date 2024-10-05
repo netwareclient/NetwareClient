@@ -16,7 +16,6 @@ class RequestClient(
     // Constructor 1
     constructor(url: String, method: String) : this(url) {
         networkRequestMethod = method
-        println(networkRequestMethod)
     }
 
     // Constructor 2
@@ -38,15 +37,18 @@ class RequestClient(
         addHeaders(headers)
     }
 
-    private val networkRequestMethodIsValid = networkRequestMethod == "GET"
+    private fun networkRequestMethodIsValid(): Boolean {
+        return networkRequestMethod in listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
+    }
 
     // Request builder function with callback
     fun build(clientCallback: ClientCallback) {
         when {
-            networkRequestMethodIsValid -> {
+            networkRequestMethodIsValid() -> {
 
             }
             else -> {
+
             }
         }
     }
@@ -54,11 +56,13 @@ class RequestClient(
     // Request builder function without callback
     fun build(): RequestClient {
         when {
-            networkRequestMethodIsValid -> {
+            networkRequestMethodIsValid() -> {
+
+            }
+            else -> {
 
             }
         }
-
         return this
     }
 
@@ -83,5 +87,5 @@ class RequestClient(
 
     internal fun getRequestBody() = networkRequestBody
 
-    internal fun isNetworkRequestMethodValid() = networkRequestMethodIsValid
+    internal fun isNetworkRequestMethodValid() = networkRequestMethodIsValid()
 }

@@ -1,7 +1,10 @@
 package netware.client.callbacks
 
+import netware.client.holders.RequestError
+import netware.client.holders.RequestResponse
+
 interface ClientCallback {
 
-    fun onSuccess()
-    fun onError()
+    fun onSuccess(response: RequestResponse)
+    fun onError(error: RequestError)
 }
