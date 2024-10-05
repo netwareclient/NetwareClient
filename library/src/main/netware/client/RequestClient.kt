@@ -1,5 +1,7 @@
 package netware.client
 
+import netware.client.callbacks.ClientCallback
+
 @Suppress("unused")
 class RequestClient(
     url: String
@@ -42,7 +44,7 @@ class RequestClient(
     }
 
     // Request builder function with callback
-    fun build(url: String) {
+    fun build(clientCallback: ClientCallback) {
 
     }
 
