@@ -1,6 +1,7 @@
 package netware.client
 
 import netware.client.callbacks.ClientCallback
+import netware.client.executors.RequestClientExecutor
 import netware.client.holders.RequestError
 import netware.client.holders.RequestResponse
 
@@ -116,7 +117,12 @@ class RequestClient(
             isSuccess = false
         } else {
 
-
+            val requestClientExecutor = RequestClientExecutor(
+                networkRequestUrl = networkRequestUrl,
+                networkRequestMethod = networkRequestMethod,
+                networkRequestHeaders = networkRequestHeaders,
+                networkRequestBody = networkRequestBody
+            )
         }
     }
 

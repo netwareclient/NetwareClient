@@ -13,11 +13,11 @@ data class RequestResponse(
     fun getResponse() = response
     fun getHeaders() = headers
 
-    fun getLog() {
+    fun getResponseLog() {
 
     }
 
-    fun getLog(formatted: Boolean) {
+    fun getResponseLog(formatted: Boolean) {
 
     }
 }
