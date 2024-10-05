@@ -10,7 +10,7 @@ class RequestClient(
 ) {
 
     private val networkRequestUrl = url
-    private var networkRequestMethod = "GET" // Get is a default network request method
+    private var networkRequestMethod = "" // Get is a default network request method
     private val networkRequestHeaders = mutableMapOf<String, String>()
     private var networkRequestBody = ""
 
@@ -54,7 +54,11 @@ class RequestClient(
             }
             else -> {
                 clientCallback.onError(
-                    error = invalidNetworkRequestError
+                    error = RequestError(
+                        statusCode = 1000,
+                        status = "Failed",
+                        message = "\"$networkRequestMethod\" is not a valid HTTP request method."
+                    )
                 )
                 isSuccess = false
             }
@@ -68,7 +72,11 @@ class RequestClient(
 
             }
             else -> {
-                error = invalidNetworkRequestError
+                error = RequestError(
+                    statusCode = 1000,
+                    status = "Failed",
+                    message = "\"$networkRequestMethod\" is not a valid HTTP request method."
+                )
                 isSuccess = false
             }
         }
@@ -81,12 +89,6 @@ class RequestClient(
             networkRequestHeaders[key] = value
         }
     }
-
-    private val invalidNetworkRequestError = RequestError(
-        statusCode = 1000,
-        status = "Failed",
-        message = "$networkRequestMethod is not a valid HTTP request method."
-    )
 
     internal fun getRequestHeaders() = networkRequestHeaders
 

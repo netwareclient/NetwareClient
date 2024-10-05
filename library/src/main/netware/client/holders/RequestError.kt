@@ -9,8 +9,11 @@ data class RequestError(
     fun getStatusCode() = statusCode
     fun getStatus() = status
     fun getMessage() = message
-    fun getErrorLog() {
-
+    fun getErrorLog(): String {
+        return """
+            Status code: $statusCode, Status: $status.
+            Message: $message
+        """.trimIndent()
     }
 
 }
