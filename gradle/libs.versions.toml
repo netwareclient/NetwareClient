@@ -1,10 +1,9 @@
 [versions]
 kotlinJvm = "2.0.20"
-junitVersion = "4.13.2"
+junitJupiter = "5.10.0"
 
 [libraries]
-junit = { group = "junit", name = "junit", version.ref = "junitVersion"}
-
+jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter"}
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }

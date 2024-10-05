@@ -3,3 +3,7 @@
 
 # Idea local configuration folder
 .idea
+
+# Build
+build
+/library/build

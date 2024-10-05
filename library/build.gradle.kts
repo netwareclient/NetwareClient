@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation(libs.junit)
+    testImplementation(libs.jupiter)
 }
 
 tasks.test {
