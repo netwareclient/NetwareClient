@@ -43,14 +43,24 @@ class RequestClient(
         }
     }
 
+    private val networkRequestMethodIsValid = networkRequestMethod in listOf("GET", "POST", "PUT", "DELETE")
+
     // Request builder function with callback
     fun build(clientCallback: ClientCallback) {
+        when {
+            networkRequestMethodIsValid -> {
 
+            }
+        }
     }
 
     // Request builder function without callback
     fun build() {
+        when {
+            networkRequestMethodIsValid -> {
 
+            }
+        }
     }
 
     internal fun getRequestHeaders() = networkRequestHeaders
@@ -60,4 +70,6 @@ class RequestClient(
     internal fun getRequestUrl() = networkRequestUrl
 
     internal fun getRequestBody() = networkRequestBody
+
+    internal fun isNetworkRequestMethodValid() = networkRequestMethodIsValid
 }
