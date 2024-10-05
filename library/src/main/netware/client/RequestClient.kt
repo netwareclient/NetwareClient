@@ -42,6 +42,13 @@ class RequestClient(
         addHeaders(headers)
     }
 
+    // Constructor 5
+    constructor(url: String, method: String, body: String): this(url) {
+        networkRequestMethod = method
+        addHeaders(emptyMap())
+        networkRequestBody = body
+    }
+
     private fun networkRequestMethodIsValid(): Boolean {
         return networkRequestMethod in listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
     }

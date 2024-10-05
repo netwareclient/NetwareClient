@@ -95,4 +95,23 @@ class RequestClientTest {
             )
         }
     }
+
+    @Test
+    fun checkForBodyWithGetRequestMethod() {
+
+        val requestClient = RequestClient(
+            url = "http://127.0.0.1:8080/",
+            method = "GET",
+            body = "GET"
+        ).build()
+
+        if (requestClient.isSuccess) {
+
+        } else {
+            assertEquals("""
+                Status code: 1000, Status: Failed.
+                Message: An HTTP GET request cannot contain a request body.
+            """.trimIndent(), requestClient.error.getErrorLog())
+        }
+    }
 }
