@@ -123,6 +123,19 @@ class RequestClient(
                 networkRequestHeaders = networkRequestHeaders,
                 networkRequestBody = networkRequestBody
             )
+
+            val requestStatus = requestClientExecutor.validateNetworkRequest()
+
+            if (requestStatus.isSuccessful) {
+                clientCallback.onSuccess(
+                    response = requestStatus.getResponse()
+                )
+                isSuccess = true
+            } else {
+                clientCallback.onError(
+                    error = requestStatus.getError()
+                )
+            }
         }
     }
 
