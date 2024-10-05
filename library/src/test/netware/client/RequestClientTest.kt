@@ -2,8 +2,6 @@ package netware.client
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.fail
-
 
 class RequestClientTest {
 
@@ -77,6 +75,24 @@ class RequestClientTest {
             """.trimIndent(), requestClient.error.getErrorLog(
                 formated = true
             ))
+        }
+    }
+
+    @Test
+    fun checkInvalidNetworkRequestErrorLogUnformatted() {
+
+        val requestClient = RequestClient(
+            url = "http://127.0.0.1:8080/",
+            method = "UMM"
+        ).build()
+
+        if (requestClient.isSuccess) {
+
+        } else {
+            assertEquals("""
+                Status code: 1000, Status: Failed.
+                Message: "UMM" is not a valid HTTP request method.
+            """.trimIndent(), requestClient.error.getErrorLog())
         }
     }
 }
