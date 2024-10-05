@@ -3,6 +3,7 @@ package netware.client.executors
 import netware.client.holders.RequestClientResponse
 import netware.client.holders.RequestError
 
+@Suppress("unused")
 class RequestClientExecutor(
     private val networkRequestUrl: String,
     private val networkRequestMethod: String,
@@ -13,10 +14,14 @@ class RequestClientExecutor(
     internal fun validateNetworkRequest(): RequestClientResponse {
         return when {
             networkRequestUrl.startsWith("http://") -> {
-                requestExecutor()
+                requestExecutor(
+                    isHTTPs = false
+                )
             }
             networkRequestUrl.startsWith("https://") -> {
-                requestExecutor()
+                requestExecutor(
+                    isHTTPs = true
+                )
             }
             else -> {
                 return RequestClientResponse(
@@ -31,7 +36,9 @@ class RequestClientExecutor(
         }
     }
 
-    internal fun requestExecutor(): RequestClientResponse {
+    internal fun requestExecutor(isHTTPs: Boolean): RequestClientResponse {
+
+
         return RequestClientResponse(
             isSuccessful = true
         )
