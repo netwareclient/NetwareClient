@@ -2,6 +2,7 @@ package netware.client
 
 import netware.client.callbacks.ClientCallback
 import netware.client.holders.RequestError
+import netware.client.holders.RequestResponse
 
 @Suppress("unused")
 class RequestClient(
@@ -12,6 +13,10 @@ class RequestClient(
     private var networkRequestMethod = "GET" // Get is a default network request method
     private val networkRequestHeaders = mutableMapOf<String, String>()
     private var networkRequestBody = ""
+
+    var isSuccess: Boolean = false
+    val response: RequestResponse = RequestResponse()
+    var error: RequestError = RequestError()
 
     // Constructor 1
     constructor(url: String, method: String) : this(url) {
@@ -48,7 +53,10 @@ class RequestClient(
 
             }
             else -> {
-
+                clientCallback.onError(
+                    error = invalidNetworkRequestError
+                )
+                isSuccess = false
             }
         }
     }
@@ -60,7 +68,8 @@ class RequestClient(
 
             }
             else -> {
-
+                error = invalidNetworkRequestError
+                isSuccess = false
             }
         }
         return this

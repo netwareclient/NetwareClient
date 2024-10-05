@@ -11,4 +11,4 @@ build
 
 # Kotlin
 .kotlin
-library/src/main/netware/client/Main.kt
+library/src/main/Main.kt

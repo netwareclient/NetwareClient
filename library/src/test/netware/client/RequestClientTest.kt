@@ -53,4 +53,5 @@ class RequestClientTest {
 
         assertEquals(true, requestClient.isNetworkRequestMethodValid())
     }
+
 }
