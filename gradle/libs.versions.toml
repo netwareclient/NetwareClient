@@ -1,5 +1,10 @@
 [versions]
 kotlinJvm = "2.0.20"
+junitVersion = "4.13.2"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junitVersion"}
+
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }

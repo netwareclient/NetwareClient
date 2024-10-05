@@ -15,7 +15,11 @@ repositories {
 }
 
 dependencies {
+    testImplementation(libs.junit)
+}
 
+tasks.test {
+    useJUnitPlatform()
 }
 
 java {
