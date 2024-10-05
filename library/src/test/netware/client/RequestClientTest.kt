@@ -87,10 +87,12 @@ class RequestClientTest {
         if (requestClient.isSuccess) {
 
         } else {
-            assertEquals("""
+            assertEquals(
+                """
                 Status code: 1000, Status: Failed.
                 Message: "UMM" is not a valid HTTP request method.
-            """.trimIndent(), requestClient.error.getErrorLog())
+            """.trimIndent(), requestClient.error.getErrorLog()
+            )
         }
     }
 }

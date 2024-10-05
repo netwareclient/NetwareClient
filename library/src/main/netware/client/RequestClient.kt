@@ -12,10 +12,10 @@ class RequestClient(
     private val networkRequestUrl = url
     private var networkRequestMethod = "" // Get is a default network request method
     private val networkRequestHeaders = mutableMapOf<String, String>()
-    private var networkRequestBody = ""
+    private var networkRequestBody: String? = null
 
     var isSuccess: Boolean = false
-    val response: RequestResponse = RequestResponse()
+    var response: RequestResponse = RequestResponse()
     var error: RequestError = RequestError()
 
     // Constructor 1
@@ -71,6 +71,17 @@ class RequestClient(
     fun build(): RequestClient {
         when {
             networkRequestMethodIsValid() -> {
+                executeRequest(object : ClientCallback {
+                    override fun onSuccess(response: RequestResponse) {
+                        isSuccess = true
+                        this@RequestClient.response = response
+                    }
+
+                    override fun onError(error: RequestError) {
+                        isSuccess = false
+                        this@RequestClient.error = error
+                    }
+                })
 
             }
             else -> {
@@ -83,6 +94,23 @@ class RequestClient(
             }
         }
         return this
+    }
+
+    // Function to execute network request
+    private fun executeRequest(clientCallback: ClientCallback) {
+        if (networkRequestMethod == "GET" && networkRequestBody != null) {
+            clientCallback.onError(
+                error = RequestError(
+                    statusCode = 1000,
+                    status = "Failed",
+                    message = "An HTTP GET request cannot contain a request body."
+                )
+            )
+            isSuccess = false
+        } else {
+
+
+        }
     }
 
     // Function to add headers to the network request headers
