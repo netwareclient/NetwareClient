@@ -1,5 +1,6 @@
 package netware.client.holders
 
+// Data class to hold error message of HTTP Requests
 data class RequestError(
     private val status: String = "No error status found",
     private val statusCode: Int = 0,
@@ -19,13 +20,11 @@ data class RequestError(
     fun getErrorLog(formated: Boolean): String {
         return if (formated) {
             """
-
                 --------------------------------------------------
                 Status code: $statusCode, Status: $status.
                 Message: -----------------------------------------
                 $message
                 --------------------------------------------------
-                
             """.trimIndent()
         } else {
             """

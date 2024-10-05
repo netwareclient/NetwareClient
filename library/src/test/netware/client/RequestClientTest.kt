@@ -65,13 +65,11 @@ class RequestClientTest {
 
         } else {
             assertEquals("""
-                
                 --------------------------------------------------
                 Status code: 1000, Status: Failed.
                 Message: -----------------------------------------
                 "UMM" is not a valid HTTP request method.
                 --------------------------------------------------
-                
             """.trimIndent(), requestClient.error.getErrorLog(
                 formated = true
             ))

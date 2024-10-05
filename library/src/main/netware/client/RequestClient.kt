@@ -47,7 +47,7 @@ class RequestClient(
     }
 
     // Request builder function with callback
-    fun build(clientCallback: ClientCallback) {
+    fun build(clientCallback: ClientCallback): RequestClient {
         when {
             networkRequestMethodIsValid() -> {
 
@@ -63,6 +63,8 @@ class RequestClient(
                 isSuccess = false
             }
         }
+
+        return this
     }
 
     // Request builder function without callback
