@@ -44,4 +44,8 @@ class RequestClient(
     internal fun getRequestHeaders(): Map<String, String> {
         return networkRequestHeaders
     }
+
+    internal fun getMethod(): String {
+        return networkRequestMethod
+    }
 }
