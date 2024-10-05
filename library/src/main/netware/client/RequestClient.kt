@@ -2,7 +2,7 @@ package netware.client
 
 @Suppress("unused")
 class RequestClient(
-    private val url: String
+    url: String
 ) {
 
     private val networkRequestUrl = url
@@ -48,5 +48,4 @@ class RequestClient(
     internal fun getRequestUrl() = networkRequestUrl
 
     internal fun getRequestBody() = networkRequestBody
-
 }
