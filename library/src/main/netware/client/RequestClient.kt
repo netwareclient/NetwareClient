@@ -47,4 +47,6 @@ class RequestClient(
 
     internal fun getRequestUrl() = networkRequestUrl
 
+    internal fun getRequestBody() = networkRequestBody
+
 }
