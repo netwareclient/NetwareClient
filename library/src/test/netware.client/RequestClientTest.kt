@@ -30,6 +30,16 @@ class RequestClientTest {
             method = "GET"
         )
 
-        assertEquals("GET", requestClient.getMethod())
+        assertEquals("GET", requestClient.getRequestMethod())
+    }
+
+    @Test
+    fun verifyNetworkRequestUrl() {
+
+        val requestClient = RequestClient(
+            url = "http://127.0.0.1:8080/",
+        )
+
+        assertEquals("http://127.0.0.1:8080/", requestClient.getRequestUrl())
     }
 }
