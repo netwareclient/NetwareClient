@@ -8,4 +8,7 @@
 build
 /library/build
 /api/build
+
+# Kotlin
 .kotlin
+library/src/main/netware/client/Main.kt

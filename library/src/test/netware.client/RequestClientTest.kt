@@ -42,4 +42,15 @@ class RequestClientTest {
 
         assertEquals("http://127.0.0.1:8080/", requestClient.getRequestUrl())
     }
+
+    @Test
+    fun checkNetworkRequestMethod() {
+
+        val requestClient = RequestClient(
+            url = "http://127.0.0.1:8080/",
+            method = "POST"
+        )
+
+        assertEquals(true, requestClient.isNetworkRequestMethodValid())
+    }
 }
