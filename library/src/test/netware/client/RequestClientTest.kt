@@ -2,6 +2,7 @@ package netware.client
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.fail
 
 
 class RequestClientTest {
@@ -53,5 +54,6 @@ class RequestClientTest {
 
         assertEquals(true, requestClient.isNetworkRequestMethodValid())
     }
+
 
 }

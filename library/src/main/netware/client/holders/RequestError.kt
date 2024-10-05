@@ -1,7 +1,7 @@
 package netware.client.holders
 
 data class RequestError(
-    private val status: String = "No error status found.",
+    private val status: String = "No error status found",
     private val statusCode: Int = 0,
     private val message: String = "No error message found.",
 ) {
@@ -14,6 +14,25 @@ data class RequestError(
             Status code: $statusCode, Status: $status.
             Message: $message
         """.trimIndent()
+    }
+
+    fun getErrorLog(formated: Boolean): String {
+        return if (formated) {
+            """
+
+                --------------------------------------------------
+                Status code: $statusCode, Status: $status.
+                Message: -----------------------------------------
+                $message
+                --------------------------------------------------
+                
+            """.trimIndent()
+        } else {
+            """
+                Status code: $statusCode, Status: $status.
+                Message: $message
+            """.trimIndent()
+        }
     }
 
 }
