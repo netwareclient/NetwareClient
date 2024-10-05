@@ -41,6 +41,16 @@ class RequestClient(
         }
     }
 
+    // Request builder function with callback
+    fun build(url: String) {
+
+    }
+
+    // Request builder function without callback
+    fun build() {
+
+    }
+
     internal fun getRequestHeaders() = networkRequestHeaders
 
     internal fun getRequestMethod() = networkRequestMethod
