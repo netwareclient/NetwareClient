@@ -21,4 +21,15 @@ class RequestClientTest {
 
         assertEquals(demoHeaders, requestClient.getRequestHeaders())
     }
+
+    @Test
+    fun verifyNetworkRequestMethod() {
+
+        val requestClient = RequestClient(
+            url = "http://127.0.0.1:8080/",
+            method = "GET"
+        )
+
+        assertEquals("GET", requestClient.getMethod())
+    }
 }
