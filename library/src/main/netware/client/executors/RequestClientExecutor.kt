@@ -5,7 +5,6 @@ import netware.client.holders.RequestError
 import netware.client.holders.RequestResponse
 import java.net.HttpURLConnection
 import java.net.URI
-import java.net.URL
 import javax.net.ssl.HttpsURLConnection
 
 @Suppress("unused")
@@ -96,6 +95,7 @@ class RequestClientExecutor(
                     )
                 )
             } else {
+
                 RequestClientResponse(
                     isSuccessful = true,
                     response = RequestResponse(
@@ -121,5 +121,4 @@ class RequestClientExecutor(
 
         return requestResult
     }
-
 }
