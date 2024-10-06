@@ -2,7 +2,7 @@ package netware.client.holders
 
 // Data class holding request status of HTTP Requests
 data class RequestClientResponse(
-    val isSuccessful: Boolean,
+    val isSuccessful: Boolean = false,
     private val response: RequestResponse = RequestResponse(),
     private val error: RequestError = RequestError()
 ) {
