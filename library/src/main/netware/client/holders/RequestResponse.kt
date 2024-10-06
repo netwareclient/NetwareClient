@@ -20,7 +20,20 @@ data class RequestResponse(
         """.trimIndent()
     }
 
-    fun getResponseLog(formatted: Boolean) {
-
+    fun getResponseLog(formatted: Boolean): String {
+        return if (formatted) {
+            """
+                ---------------------------------------------------------
+                Status: $status, Status Code: $statusCode.
+                Response: -----------------------------------------------
+                $response
+                ---------------------------------------------------------
+            """.trimIndent()
+        } else {
+            """
+                Status code: $statusCode, Status: $status.
+                Response: $response
+            """.trimIndent()
+        }
     }
 }
