@@ -8,7 +8,6 @@
 build
 /library/build
 /api/build
-
 # Kotlin
 .kotlin
 library/src/main/Main.kt

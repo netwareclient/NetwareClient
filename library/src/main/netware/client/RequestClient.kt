@@ -11,7 +11,7 @@ class RequestClient(
 ) {
 
     private val networkRequestUrl = url
-    private var networkRequestMethod = "" // Get is a default network request method
+    private var networkRequestMethod = "GET" // Get is a default network request method
     private val networkRequestHeaders = mutableMapOf<String, String>()
     private var networkRequestBody: String? = null
 
