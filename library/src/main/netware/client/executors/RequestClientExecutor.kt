@@ -107,7 +107,14 @@ class RequestClientExecutor(
                 )
             }
         } catch (exception: Exception) {
-            println(exception)
+            requestResult = RequestClientResponse(
+                isSuccessful = false,
+                error = RequestError(
+                    status = "Failed",
+                    statusCode = 1000,
+                    message = "$exception"
+                )
+            )
         } finally {
             networkRequestConnection.disconnect()
         }
