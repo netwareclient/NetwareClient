@@ -58,7 +58,14 @@ class RequestClient(
     fun build(clientCallback: ClientCallback): RequestClient {
         when {
             networkRequestMethodIsValid() -> {
-
+                executeRequest(object : ClientCallback {
+                    override fun onSuccess(response: RequestResponse) {
+                        clientCallback.onSuccess(response)
+                    }
+                    override fun onError(error: RequestError) {
+                        clientCallback.onError(error)
+                    }
+                })
             }
             else -> {
                 clientCallback.onError(
@@ -84,13 +91,11 @@ class RequestClient(
                         isSuccess = true
                         this@RequestClient.response = response
                     }
-
                     override fun onError(error: RequestError) {
                         isSuccess = false
                         this@RequestClient.error = error
                     }
                 })
-
             }
             else -> {
                 error = RequestError(
