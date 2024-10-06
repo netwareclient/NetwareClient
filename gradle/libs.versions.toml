@@ -2,6 +2,7 @@
 kotlinJvm = "2.0.20"
 junitJupiterApi = "5.11.1"
 junitJupiterEngine = "5.9.3"
+springFrameworkBoot = "3.3.4"
 
 [libraries]
 jupiterApi = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junitJupiterApi"}
@@ -10,3 +11,5 @@ jupiterEngine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", ve
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
 mavenPublish = { id = "maven-publish" }
+springFramework = { id = "org.springframework.boot", version.ref = "springFrameworkBoot"}
+
