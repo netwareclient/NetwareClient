@@ -19,10 +19,10 @@ class RequestClient(
     var isSuccess: Boolean = false
 
     @JvmField
-    public var response: RequestResponse = RequestResponse()
+    var response: RequestResponse = RequestResponse()
 
     @JvmField
-    public var error: RequestError = RequestError()
+    var error: RequestError = RequestError()
 
     // Constructor 1
     constructor(url: String, method: String) : this(url) {
