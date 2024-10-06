@@ -3,6 +3,7 @@
 
 # Idea local configuration folder
 .idea
+/api/
 
 # Build
 build
