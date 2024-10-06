@@ -13,8 +13,11 @@ data class RequestResponse(
     fun getResponse() = response
     fun getHeaders() = headers
 
-    fun getResponseLog() {
-
+    fun getResponseLog(): String {
+        return """
+            Status code: $statusCode, Status: $status.
+            Response: $response
+        """.trimIndent()
     }
 
     fun getResponseLog(formatted: Boolean) {
