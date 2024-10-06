@@ -78,7 +78,6 @@ class RequestClient(
                 isSuccess = false
             }
         }
-
         return this
     }
 
@@ -103,6 +102,7 @@ class RequestClient(
                     status = "Failed",
                     message = "\"$networkRequestMethod\" is not a valid HTTP request method."
                 )
+
                 isSuccess = false
             }
         }
