@@ -3,7 +3,7 @@ import netware.client.callbacks.ClientCallback
 import netware.client.holders.RequestError
 import netware.client.holders.RequestResponse
 
-fun networkRequest() {
+fun networkRequestWithCallback() {
 
     val requestClient = RequestClient(
         url = "http://localhost:3000"
@@ -22,6 +22,5 @@ fun networkRequest() {
 }
 
 fun main() {
-
-    networkRequest()
+    networkRequestWithCallback()
 }
