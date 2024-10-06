@@ -15,9 +15,14 @@ class RequestClient(
     private val networkRequestHeaders = mutableMapOf<String, String>()
     private var networkRequestBody: String? = null
 
+    @JvmField
     var isSuccess: Boolean = false
-    var response: RequestResponse = RequestResponse()
-    var error: RequestError = RequestError()
+
+    @JvmField
+    public var response: RequestResponse = RequestResponse()
+
+    @JvmField
+    public var error: RequestError = RequestError()
 
     // Constructor 1
     constructor(url: String, method: String) : this(url) {
@@ -102,7 +107,6 @@ class RequestClient(
                     status = "Failed",
                     message = "\"$networkRequestMethod\" is not a valid HTTP request method."
                 )
-
                 isSuccess = false
             }
         }
