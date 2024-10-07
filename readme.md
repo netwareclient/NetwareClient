@@ -38,12 +38,12 @@ repositories {
 
 - **For `build.gradle.kts`:**
 ```groovy
-implementation("com.github.sudarshanmhasrup:netwareclient:v0.0.8-alpha")
+implementation("com.github.netwareclient:netwareclient:v0.0.8-alpha")
 ```
 
 - **For `build.gradle`:**
 ```groovy
-implementation "com.github.sudarshanmhasrup:netwareclient:v0.0.8-alpha"
+implementation "com.github.netwareclient:netwareclient:v0.0.8-alpha"
 ```
 
 Where to add the above lines? You may find the following code structure in your `build.gradle` or `build.gradle.kts` file. Just copy and paste the above line in your code structure.
@@ -51,7 +51,7 @@ Where to add the above lines? You may find the following code structure in your 
 dependencies {
 
     // Insert the above line here
-    implementation("com.github.sudarshanmhasrup:netwareclient:v0.0.8-alpha")
+    implementation("com.github.netwareclient:netwareclient:v0.0.8-alpha")
     
     // Your another project dependencies
 }
