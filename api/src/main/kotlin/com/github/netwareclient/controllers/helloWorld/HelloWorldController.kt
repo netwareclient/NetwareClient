@@ -1,4 +1,4 @@
-package com.github.netwareclient.model.helloWorld
+package com.github.netwareclient.controllers.helloWorld
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

@@ -1,4 +1,4 @@
-package com.github.netwareclient.model.helloWorld
+package com.github.netwareclient.controllers.helloWorld
 
 data class Message(
     val message: String,

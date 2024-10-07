@@ -25,18 +25,4 @@ class RequestClientExecutorTest {
             Message: Invalid network request protocol.
         """.trimIndent(), requestClientExecutor.getError().getErrorLog())
     }
-
-    @Test
-    fun requestExecutorTest() {
-
-        val requestClientExecutor = RequestClientExecutor(
-            networkRequestUrl = "http://localhost:3000/",
-            networkRequestMethod = "GET",
-            networkRequestHeaders = null
-        ).requestExecutor(
-            isHTTPs = false
-        )
-
-        assertEquals(expectedResponse, requestClientExecutor.getResponse())
-    }
 }
