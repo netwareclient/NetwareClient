@@ -2,7 +2,7 @@
 kotlinJvm = "2.0.20"
 junitJupiterApi = "5.11.1"
 junitJupiterEngine = "5.9.3"
-springFramework = "3.3.4"
+springBootKotlin = "2.0.20"
 springBootWebStarter = "3.3.4"
 
 [libraries]
@@ -13,5 +13,4 @@ springBootWeb = { group = "org.springframework.boot", name = "spring-boot-starte
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
 mavenPublish = { id = "maven-publish" }
-springBoot = { id = "org.springframework.boot", version.ref = "springFramework"}
-
+springBoot = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "springBootKotlin"}
