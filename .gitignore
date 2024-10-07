@@ -3,13 +3,12 @@
 
 # Idea local configuration folder
 .idea
-/api/
 
 # Build
 build
-/library/build
-/api/build
-/snippets/build
+library/build
+api/build
+snippets/build
 
 # Kotlin
 .kotlin

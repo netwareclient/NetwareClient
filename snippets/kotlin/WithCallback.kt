@@ -6,7 +6,7 @@ import netware.client.holders.RequestResponse
 fun networkRequestWithCallback() {
 
     val requestClient = RequestClient(
-        url = "http://localhost:3000"
+        url = "http://localhost:8000/hello-world"
     ).build(object : ClientCallback {
         override fun onSuccess(response: RequestResponse) {
             println(response.getResponseLog(

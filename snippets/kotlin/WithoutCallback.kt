@@ -3,7 +3,7 @@ import netware.client.RequestClient
 fun networkRequestWithoutCallback() {
 
     val requestClient = RequestClient(
-        url = "http://localhost:3000",
+        url = "http://localhost:8000/hello-world",
     ).build()
 
     if (requestClient.isSuccess) {

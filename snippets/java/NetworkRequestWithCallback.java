@@ -8,7 +8,7 @@ public class NetworkRequestWithCallback {
     public static void main(String[] args) {
 
         new RequestClient(
-                "http://localhost:3000"
+                "http://localhost:8000/hello-world"
         ).build(new ClientCallback() {
             @Override
             public void onSuccess(@NotNull RequestResponse response) {
