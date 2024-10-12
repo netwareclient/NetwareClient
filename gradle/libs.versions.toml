@@ -11,6 +11,5 @@ jupiterEngine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", ve
 springBootWeb = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "springBootWebStarter"}
 
 [plugins]
-kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
 mavenPublish = { id = "maven-publish" }
 springBoot = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "springBootKotlin"}
