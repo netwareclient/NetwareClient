@@ -15,13 +15,8 @@ class RequestClient(
     private val networkRequestHeaders = mutableMapOf<String, String>()
     private var networkRequestBody: String? = null
 
-    @JvmField
     var isSuccess: Boolean = false
-
-    @JvmField
     var response: RequestResponse = RequestResponse()
-
-    @JvmField
     var error: RequestError = RequestError()
 
     // Constructor 1
