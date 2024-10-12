@@ -6,7 +6,9 @@ import netware.client.holders.RequestResponse
 fun networkRequestWithCallback() {
 
     val requestClient = RequestClient(
-        url = "http://localhost:8000/hello-world"
+        url = "http://localhost:8000/v1/auth/create-new-account",
+        method = "POST",
+        body = ""
     ).build(object : ClientCallback {
         override fun onSuccess(response: RequestResponse) {
             println(response.getResponseLog(

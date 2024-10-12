@@ -17,7 +17,6 @@ repositories {
 dependencies {
     testImplementation(libs.jupiterApi)
     testImplementation(libs.jupiterEngine)
-    testImplementation(kotlin("test"))
 }
 
 tasks.test {
